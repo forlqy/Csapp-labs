@@ -40,7 +40,7 @@ int isTmax(int x) {
 	int symbolicBit = !!(moreTmax & x);//
 	x = x | moreTmax;
 	x = ~x + symbolicBit;
-	return ~x;
+	return !x;
 }
 ```
 该函数判断参数是否为int型数据的最大值，即0x7fffffff。可对符号位与其他位分别判断，首先令symbolicBit为x的符号位，并将x的符号位-置为1。当x等于`0x7fffffff`和`0xffffffff`时，对符号位置1的x取反会得到0值。因此，仅需进而判断原来的x符号位是否为1即可。
