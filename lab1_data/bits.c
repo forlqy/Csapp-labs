@@ -96,7 +96,7 @@ int isTmax(int x) {
 	int symbolicBit = !!(moreTmax & x);
 	x = x | moreTmax;
 	x = ~x + symbolicBit;
-	return ~x;
+	return !x;
 }
 /* 
  * allOddBits - return 1 if all odd-numbered bits in word set to 1
